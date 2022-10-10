@@ -1,0 +1,100 @@
+Burn (S)VCD video fr eCS und OS/2 V 0.9.5.6
+============================================
+
+Dieses Programm ist Freeware und ver”ffentlicht unter der GNU General Public License.
+Details siehe in copying.txt.
+
+Haftungsausschluss
+~~~~~~~~~~~~~~~~~~
+Sie nutzen dieses Programm auf eigene Gefahr. Der Autor gibt keinerlei
+Garantie fr die Funktionalit„t oder irgendetwas anderes im Zusammenhang
+mit diesem Programm.
+Unter keinen Umst„nden ist der Autor verantwortlich zu machen fr Sch„den
+oder irgendwelche anderen Folgen, die aus der Nutzung des Programmes entstehen.
+
+Was tut es ?
+~~~~~~~~~~~~
+Dies ist eine grafische Oberfl„che fr die folgenden Funktionen:
+- Enkodieren von Video-Material
+- Erzeugen der VCD- bzw. SVCD-Struktur als Image
+- Brennen der Image-Datei auf CD
+
+Es ist eine Oberfl„che, d.h. die Arbeit machen Kommandozeilenprogramme (VIO).
+Folgende Programme werden ben”tigt:
+- ffmpeg
+- vcdimager
+- cdrdao
+
+Die neuesten Versionen von ffmpeg und vcdimager sind zu hier zu finden:
+http://smedley.info/os2ports
+
+ACHTUNG: ffmpeg ab der Version vom 21.11.2006 erwartet die Video-Bitrate in Bit/s.
+Fr die Angabe in kBit/s muss ein "k" hinter die Zahl gesetzt werden, dies macht
+DVDBurn ab dieser Version selbst„ndig (einzige nderung in V 0.9.5.6).
+
+cdrdao kann vom Hobbes-Server geladen werden. Momentan ist folgender Link aktuell:
+http://hobbes.nmsu.edu/pub/os2/apps/mmedia/cd/cd-r/cdrdao2-1.2.1.zip
+
+Einige der Programme ben”tigen zus„tzliche dlls, bitte in der Readme-Datei
+nachlesen.
+
+Benutzung
+~~~~~~~~~
+Um VCDBurn.exe laufen zu lassen muss VROBJ.DLL vorhanden sein, normalerweise
+haben eCS- und OS/2-Nutzer diese Datei auf ihrem Rechner. Falls nicht, kann sie
+hier heruntergeladen werden:
+http://bohn-stralsund.de/download.htm
+
+Zuerst wird der Knopf "Settings" geklickt und die Pfade zu den Kommandozeilenprogrammen gesetzt.
+Fr jedes Kommandozeilenprogramm sind die Einstellungen auf einer separaten Registerkarte
+untergebracht.
+Wichtig zum Brennen ist die Ger„te-ID des CD-Brenners (z.B. 0,1,0) und der Treiber,
+einzustellen auf der "cdrdao"-Karte.
+Ein Ordner fr die Zieldateien muss eingestellt werden auf der Karte "common".
+
+Zum Transkodieren unbedingt notwendig sind die ffmpeg-Bitraten fr Video und Audio. Bei VCD sind
+diese durch den Standard fest vorgegeben (Video=1150 kBps, Audio=224 KBps). Fr die beiden anderen
+Formate schlage ich folgende Werte vor:
+SVCD: Video=2500 kBps, Audio=224 kBps
+XVCD: Video=1800 kBps, Audio=224 kBps
+
+Im Hauptfenster werden die gewnschten Aktionen markiert. Mit dem "+"-Knopf werden Dateien zum
+Enkodieren hinzugefgt.	Als Typ der Video-CD k”nnen SVCD,VCD (feste Bitrate 1150 kB/s) und XVCD
+(VCD mit w„hlbarer Bitrate) ausgew„hlt werden.
+
+Mit Klick auf "Start" werden die markierten Aktionen nacheinander ausgefhrt.
+
+Fr weitere Information siehe meine Webseite "http://bohn-stralsund.de". Klick auf "VCDBurn"
+in der Navigationsleiste auf der linken Seite zeigt die entsprechende Seite an.
+
+
+Historie
+~~~~~~~~
+V 0.9.5.6
+- Anpassung an ffmpeg-Versionen ab 21.11.2006
+
+V 0.9.5.5
+- Korrekte Anzeige freier Plattenplatz jetzt auch auf JFS-Partitionen
+- Prfung "MV errors" bei ffmpeg
+
+V 0.9.5.3
+- Anzeige des freien Plattenplatzes auf dem Ziellaufwerk
+
+V 0.9.5.2
+- Fehler in der Dateigr”áenermittlung gefixt
+
+V 0.9.5.1
+- Parserfehler bei Nutzung des generic-mmc-raw Treibers von cdrdao gefixt
+- die Schriftarten fr die Dateiliste, das Kurzlog und das Logdatei-Fenster k”nnen mit der System-
+  Schriftpalette gesetzt werden
+
+V 0.9.5.0
+- Die Bitrate fr Video und Audio ist jetzt getrennt fr SVCD und XVCD einstellbar
+- Enkodierte Filme (z.B. von SVCD gerippt) k”nnen jetzt transkodiert werden, im Log-Fenster
+  wird ein Kommentar angezeigt, wenn eine Datei anscheinend schon enkodiert ist
+- Das Programm merkt sich den Pfad fr die Quelldateien
+- Ein Fehler beim 2-Pass-Enkodieren wurde behoben (2. Pass bei XVCD funktionierte nicht)
+- Das Logfenster kann jetzt geleert und der Inhalt der Logdatei angezeigt werden
+
+V 0.9.4.0
+- erste Version, Entwicklungsstand entspricht der Version von DVDBurn
